@@ -2,17 +2,17 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer } from 'react-toastify';
 import { Route, Routes } from 'react-router-dom';
-import Home from './components/Home/Home';
-import NotFound from './components/NotFound/NotFound';
 // I don't no this is working here or not
 import 'react-toastify/dist/ReactToastify.css';
-import Header from './components/Header/Header';
-import Blogs from './components/Blogs/Blogs';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
-import ManageItems from './components/MenuItems/ManageItems/ManageItems';
-import AddItem from './components/MenuItems/AddItem/AddItem';
-import MyItems from './components/MenuItems/MyItems/MyItems';
+import Home from './Pages/Home/Home';
+import Header from './Pages/Shared/Header/Header';
+import Blogs from './Pages/Blogs/Blogs';
+import ManageItems from './Pages/MenuItems/ManageItems/ManageItems';
+import AddItem from './Pages/MenuItems/AddItem/AddItem';
+import MyItems from './Pages/MenuItems/MyItems/MyItems';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 // minified version is also included
 // import 'react-toastify/dist/ReactToastify.min.css';
 

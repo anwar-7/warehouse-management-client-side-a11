@@ -6,6 +6,7 @@
   font-weight: 500;
   text-decoration: none;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .active-link {
@@ -16,6 +17,7 @@
   font-weight: 500;
   text-decoration: none;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 #collasible-nav-dropdown {
