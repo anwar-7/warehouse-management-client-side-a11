@@ -1,0 +1,27 @@
+.link {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.active-link {
+  display: flex;
+  align-items: center;
+  color: rgb(245, 3, 3);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+#collasible-nav-dropdown {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+}
