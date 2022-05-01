@@ -1,9 +1,13 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import './Header.css';
 
 const Header = () => {
+  const [user] = useAuthState(auth);
   return (
     <div>
       <Navbar
@@ -57,22 +61,51 @@ const Header = () => {
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 {/* this is only log out button */}
-                {/* <NavDropdown.Item as={Link} to="/">
-                  Log Out
-                </NavDropdown.Item> */}
+                {user ? (
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? 'active-link' : 'link'
+                    }
+                    to="/"
+                    onClick={() => signOut(auth)}
+                  >
+                    Log Out
+                  </NavLink>
+                ) : (
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? 'active-link' : 'link'
+                    }
+                    to="/login"
+                  >
+                    Login
+                  </NavLink>
+                )}
               </NavDropdown>
               {/* dropdown menu end */}
               {/* navbar menu end first section */}
             </Nav>
             <Nav>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? 'active-link' : 'link'
-                }
-                to="/login"
-              >
-                Login
-              </NavLink>
+              {user ? (
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? 'active-link' : 'link'
+                  }
+                  to="/"
+                  onClick={() => signOut(auth)}
+                >
+                  Log Out
+                </NavLink>
+              ) : (
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? 'active-link' : 'link'
+                  }
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              )}
               <NavLink
                 className={({ isActive }) =>
                   isActive ? 'active-link' : 'link'

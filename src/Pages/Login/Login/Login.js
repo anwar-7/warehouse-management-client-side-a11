@@ -4,7 +4,7 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
@@ -148,6 +148,9 @@ const Login = () => {
           <div className="d-flex justify-content-center align-items-center">
             <button className="login-button">Login</button>
           </div>
+          <p className=" text-center mt-2">
+            Don't have an account? <Link to="/register">Please Register</Link>{' '}
+          </p>
         </Form>
         <div className=" d-flex justify-content-center align-content-center mt-5">
           <SocialLogin></SocialLogin>
