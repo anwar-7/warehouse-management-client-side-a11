@@ -48,6 +48,15 @@ const Header = () => {
               >
                 Blogs
               </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'active-link' : 'link'
+                }
+                to="/inventory/:productId"
+              >
+                Inventory
+              </NavLink>
+              {/* navbar menu end first section */}
               {/* dropdown menu start */}
               <NavDropdown title="Menu Items" id="collasible-nav-dropdown">
                 <NavDropdown.Item as={Link} to="/manageItems">

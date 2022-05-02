@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import { Route, Routes } from 'react-router-dom';
 // I don't no this is working here or not
 import 'react-toastify/dist/ReactToastify.css';
-import Home from './Pages/Home/Home';
+
 import Header from './Pages/Shared/Header/Header';
 import Blogs from './Pages/Blogs/Blogs';
 import ManageItems from './Pages/MenuItems/ManageItems/ManageItems';
@@ -13,6 +13,8 @@ import MyItems from './Pages/MenuItems/MyItems/MyItems';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import Home from './Pages/Home/Home/Home';
+import Inventory from './Pages/Inventory/Inventory';
 // minified version is also included
 // import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -24,6 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/inventory/:productId" element={<Inventory />} />
         {/* dropdown menu */}
         <Route path="/manageItems" element={<ManageItems />} />
         <Route path="/addItem" element={<AddItem />} />
