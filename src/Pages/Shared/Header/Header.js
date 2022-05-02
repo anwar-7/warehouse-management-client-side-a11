@@ -52,7 +52,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive ? 'active-link' : 'link'
                 }
-                to="/inventory/:productId"
+                to="/inventory"
               >
                 Inventory
               </NavLink>

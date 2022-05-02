@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
-import {
-  useSignInWithEmailAndPassword,
-  useSignInWithGoogle,
-} from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
@@ -75,37 +72,13 @@ const Login = () => {
     if (error) {
       switch (error?.code) {
         case 'auth/invalid-email':
-          toast.error('Invalid email, Please provide a valid email', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+          toast.error('Invalid email, Please provide a valid email');
           break;
         case 'auth/invalid-password':
-          toast.error('Wrong Input. Password Intruder!!', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+          toast.error('Wrong Input. Password Intruder!!');
           break;
         default:
-          toast.error('something will be wrong! You are not Register!!!', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+          toast.error('something will be wrong! You are not Register!!!');
       }
     }
   }, [hookError]);
@@ -161,43 +134,3 @@ const Login = () => {
 };
 
 export default Login;
-
-// toast.error('Error!', {
-//   position: "top-center",
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-//   });
-
-// toast.success('Success!', {
-//   position: "top-center",
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-//   });
-
-// toast.warn('Warning!', {
-//   position: "top-center",
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-//   });
-
-// toast.info('🦄 Wow so easy!', {
-//   position: "top-center",
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-//   });

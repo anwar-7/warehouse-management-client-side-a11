@@ -26,6 +26,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
+        {/* have to be delete /inventory or update it */}
+        <Route path="/inventory" element={<Inventory />} />
         <Route path="/inventory/:productId" element={<Inventory />} />
         {/* dropdown menu */}
         <Route path="/manageItems" element={<ManageItems />} />
