@@ -64,16 +64,7 @@ const Register = () => {
     e.preventDefault();
     console.log(userInfo);
     toast.success(
-      'Your account is created successfully. Please verify you account!!',
-      {
-        position: 'top-center',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      }
+      'Your account is created successfully. Please verify you account!!'
     );
     createUserWithEmailAndPassword(userInfo.email, userInfo.password);
   };
@@ -93,37 +84,13 @@ const Register = () => {
     if (error) {
       switch (error?.code) {
         case 'auth/invalid-email':
-          toast.error('Invalid email, Please provide a valid email', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+          toast.error('Invalid email, Please provide a valid email');
           break;
         case 'auth/invalid-password':
-          toast.error('Wrong Input. Password Intruder!!', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+          toast.error('Wrong Input. Password Intruder!!');
           break;
         default:
-          toast.error('something will be wrong! You are not Register!!!', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+          toast.error('something will be wrong! You are not Register!!!');
       }
     }
   }, [hookError]);

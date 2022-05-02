@@ -24,15 +24,7 @@ const RequireAuth = ({ children }) => {
           className="btn btn-primary"
           onClick={async () => {
             await sendEmailVerification();
-            toast.success('Sent email Successfully!', {
-              position: 'top-center',
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
+            toast.success('Sent email Successfully!');
           }}
         >
           Send A Verification Email

@@ -1,5 +1,3 @@
-import { configure } from '@testing-library/react';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const useProductDetails = (productId) => {

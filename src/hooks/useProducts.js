@@ -1,11 +1,8 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const useProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    // iifi
-
     fetch(`http://localhost:5000/products`)
       .then((res) => res.json())
       .then((data) => {

@@ -4,7 +4,6 @@ import { ToastContainer } from 'react-toastify';
 import { Route, Routes } from 'react-router-dom';
 // I don't no this is working here or not
 import 'react-toastify/dist/ReactToastify.css';
-
 import Header from './Pages/Shared/Header/Header';
 import Blogs from './Pages/Blogs/Blogs';
 import ManageItems from './Pages/MenuItems/ManageItems/ManageItems';
@@ -54,43 +53,3 @@ function App() {
 }
 
 export default App;
-
-// toast.error('Error!', {
-//   position: "top-center",
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-//   });
-
-// toast.success('Success!', {
-//   position: "top-center",
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-//   });
-
-// toast.warn('Warning!', {
-//   position: "top-center",
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-//   });
-
-// toast.info('Information!', {
-//   position: "top-center",
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-//   });
