@@ -48,14 +48,14 @@ const Header = () => {
               >
                 Blogs
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 className={({ isActive }) =>
                   isActive ? 'active-link' : 'link'
                 }
                 to="/inventory"
               >
                 Inventory
-              </NavLink>
+              </NavLink> */}
               {/* navbar menu end first section */}
               {/* dropdown menu start */}
               <NavDropdown title="Menu Items" id="collasible-nav-dropdown">
@@ -95,6 +95,14 @@ const Header = () => {
               {/* navbar menu end first section */}
             </Nav>
             <Nav>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'active-link' : 'link'
+                }
+                to="/manageInventory"
+              >
+                Manage Inventory
+              </NavLink>
               {user ? (
                 <NavLink
                   className={({ isActive }) =>

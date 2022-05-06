@@ -13,6 +13,8 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import Home from './Pages/Home/Home/Home';
+import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import Inventory from './Pages/Inventory/Inventory';
 // minified version is also included
 // import 'react-toastify/dist/ReactToastify.min.css';
@@ -26,12 +28,28 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         {/* have to be delete /inventory or update it */}
-        <Route path="/inventory" element={<Inventory />} />
-        <Route path="/inventory/:productId" element={<Inventory />} />
+        {/* <Route path="/inventory" element={<Inventory />} /> */}
+        <Route
+          path="/inventory/:productId"
+          element={
+            // <RequireAuth>
+            <Inventory />
+            // </RequireAuth>
+          }
+        />
+        <Route
+          path="/manageInventory"
+          element={
+            // <RequireAuth>
+            <ManageInventory />
+            // </RequireAuth>
+          }
+        />
         {/* dropdown menu */}
         <Route path="/manageItems" element={<ManageItems />} />
         <Route path="/addItem" element={<AddItem />} />
         <Route path="/myItems" element={<MyItems />} />
+        {/* after dropdown menu */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
