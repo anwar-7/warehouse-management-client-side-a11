@@ -13,9 +13,11 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import Home from './Pages/Home/Home/Home';
-import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import Inventory from './Pages/Inventory/Inventory/Inventory';
+import ManageInventory from './Pages/Inventory/ManageInventory/ManageInventory';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
-import Inventory from './Pages/Inventory/Inventory';
+import AddInventoryItem from './Pages/Inventory/AddInventoryItem/AddInventoryItem';
+
 // minified version is also included
 // import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -42,6 +44,14 @@ function App() {
           element={
             // <RequireAuth>
             <ManageInventory />
+            // </RequireAuth>
+          }
+        />
+        <Route
+          path="/addInventoryItem"
+          element={
+            // <RequireAuth>
+            <AddInventoryItem />
             // </RequireAuth>
           }
         />

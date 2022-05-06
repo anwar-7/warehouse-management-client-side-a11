@@ -1,13 +1,37 @@
 import { Button } from 'react-bootstrap';
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import useProducts from '../../hooks/useProducts';
+import useProducts from '../../../hooks/useProducts';
 import './ManageInventory.css';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const ManageInventory = () => {
   const [products, setProducts] = useProducts();
+
+  // Delete Button
+  const handelProductDelete = (id) => {
+    const proceed = window.confirm('Are you sure you want to delete?');
+    if (proceed) {
+      console.log('Deleting Product', id);
+      const url = `http://localhost:5000/products/${id}`;
+      fetch(url, {
+        method: 'DELETE',
+      }).then((res) =>
+        res.json().then((data) => {
+          // console.log(data)
+          if (data.deletedCount > 0) {
+            alert('Data Deleted');
+            const remaining = products.filter((product) => product._id !== id);
+            setProducts(remaining);
+          }
+        })
+      );
+    }
+  };
+
   return (
     <div className="manage-inventory-container container">
+      <PageTitle title={'Manage Inventory'}></PageTitle>
       <h1 className=" text-center fw-bold text-secondary mt-5">
         Manage Inventory
       </h1>
@@ -40,7 +64,7 @@ const ManageInventory = () => {
                     <td>
                       <Button
                         className="btn btn-danger fw-light"
-                        //   onClick={() => handeluserdelete(product._id)}
+                        onClick={() => handelProductDelete(product._id)}
                       >
                         Delete
                       </Button>

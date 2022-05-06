@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import useProductDetails from '../../hooks/useProductDetails';
-import PageTitle from '../Shared/PageTitle/PageTitle';
+import useProductDetails from '../../../hooks/useProductDetails';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 import './Inventory.css';
 import { toast } from 'react-toastify';
 // import Increment from './Increment';

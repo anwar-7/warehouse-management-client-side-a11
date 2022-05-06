@@ -103,6 +103,14 @@ const Header = () => {
               >
                 Manage Inventory
               </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? 'active-link' : 'link'
+                }
+                to="/addInventoryItem"
+              >
+                Add Inventory Item
+              </NavLink>
               {user ? (
                 <NavLink
                   className={({ isActive }) =>
