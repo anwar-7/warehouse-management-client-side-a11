@@ -95,22 +95,20 @@ const Header = () => {
               {/* navbar menu end first section */}
             </Nav>
             <Nav>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? 'active-link' : 'link'
-                }
-                to="/manageInventory"
-              >
-                Manage Inventory
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? 'active-link' : 'link'
-                }
-                to="/addInventoryItem"
-              >
-                Add Inventory Item
-              </NavLink>
+              {user && (
+                <NavDropdown
+                  title="Inventory Items"
+                  id="collasible-nav-dropdown"
+                >
+                  <NavDropdown.Item as={Link} to="/manageInventory">
+                    Manage Inventory
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/addInventoryItem">
+                    Add Inventory Item
+                  </NavDropdown.Item>
+                </NavDropdown>
+              )}
+
               {user ? (
                 <NavLink
                   className={({ isActive }) =>

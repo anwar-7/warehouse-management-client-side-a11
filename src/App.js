@@ -34,9 +34,9 @@ function App() {
         <Route
           path="/inventory/:productId"
           element={
-            // <RequireAuth>
-            <Inventory />
-            // </RequireAuth>
+            <RequireAuth>
+              <Inventory />
+            </RequireAuth>
           }
         />
         <Route
