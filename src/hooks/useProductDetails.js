@@ -11,13 +11,6 @@ const useProductDetails = (productId) => {
       // console.log(data);
       setProduct(data);
     })();
-    // const url = `http://localhost:5000/products/${productId}`;
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     // console.log(data);
-    //     setProduct(data);
-    //   });
   }, [productId]);
 
   return [product, setProduct];

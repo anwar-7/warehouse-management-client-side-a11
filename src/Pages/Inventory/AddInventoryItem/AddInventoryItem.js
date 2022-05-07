@@ -1,30 +1,28 @@
 import React from 'react';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 import './AddInventoryItem.css';
 
 const AddInventoryItem = () => {
   //Form Submit function post start
   const handelAddProduct = (e) => {
     e.preventDefault();
-    const category = e.target.category.value;
+
     const name = e.target.name.value;
     const supplier = e.target.supplier.value;
     const description = e.target.description.value;
     const price = e.target.price.value;
     const stock = e.target.stock.value;
-    const ratings = e.target.ratings.value;
-    const ratingsCount = e.target.ratingsCount.value;
+
     const img = e.target.img.value;
     const shipping = e.target.shipping.value;
     const quantity = e.target.quantity.value;
     const product = {
-      category,
       name,
       supplier,
       description,
       price,
       stock,
-      ratings,
-      ratingsCount,
+
       img,
       shipping,
       quantity,
@@ -41,9 +39,7 @@ const AddInventoryItem = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log('Success:', data);
-        alert(
-          `Product Name: ${product.name} and Category: ${product.category} inserted successfully`
-        );
+        alert(`Product Name: ${product.name} inserted successfully`);
         e.target.reset();
       })
       .catch((error) => {
@@ -53,6 +49,7 @@ const AddInventoryItem = () => {
 
   return (
     <div className=" container">
+      <PageTitle title={'Add Inventory Item'}></PageTitle>
       <h1 className=" text-center fw-bold text-secondary mt-5 ">
         Add Inventory Item
       </h1>
@@ -69,6 +66,7 @@ const AddInventoryItem = () => {
               placeholder="Product Name"
               name="name"
               autoCapitalize="off"
+              required
             />
             <p className="w-100 ms-2 mb-0 d-flex fw-bold">Product Image URL</p>
             <input
@@ -77,15 +75,9 @@ const AddInventoryItem = () => {
               placeholder="Product Image URL Only"
               name="img"
               autoCapitalize="off"
+              required
             />
-            <p className="w-100 ms-2 mb-0 d-flex fw-bold">Category</p>
-            <input
-              className="w-100 mx-2 mb-2 d-flex"
-              type="text"
-              placeholder="Product Category"
-              name="category"
-              autoCapitalize="off"
-            />
+
             <p className="w-100 ms-2 mb-0 d-flex fw-bold">Supplier</p>
             <input
               className="w-100 mx-2 mb-2 d-flex"
@@ -93,16 +85,20 @@ const AddInventoryItem = () => {
               placeholder="Product Supplier"
               name="supplier"
               autoCapitalize="off"
+              required
             />
             <p className="w-100 ms-2 mb-0 d-flex fw-bold">
               Product Description
             </p>
-            <input
+            <textarea
               className="w-100 mx-2 mb-2 d-flex"
               type="comment"
               placeholder="Product Description"
+              rows="3"
+              cols="50"
               name="description"
               autoCapitalize="off"
+              required
             />
             <p className="w-100 ms-2 mb-0 d-flex fw-bold">Price in USD $</p>
             <input
@@ -111,6 +107,7 @@ const AddInventoryItem = () => {
               placeholder="Product Price"
               name="price"
               autoCapitalize="off"
+              required
             />
             <p className="w-100 ms-2 mb-0 d-flex fw-bold">Stock</p>
             <input
@@ -119,23 +116,9 @@ const AddInventoryItem = () => {
               placeholder="Product Stock"
               name="stock"
               autoCapitalize="off"
+              required
             />
-            <p className="w-100 ms-2 mb-0 d-flex fw-bold">Ratings</p>
-            <input
-              className="w-100 mx-2 mb-2 d-flex"
-              type="text"
-              placeholder="Product Ratings"
-              name="ratings"
-              autoCapitalize="off"
-            />
-            <p className="w-100 ms-2 mb-0 d-flex fw-bold">Ratings Count</p>
-            <input
-              className="w-100 mx-2 mb-2 d-flex"
-              type="text"
-              placeholder=" Product Ratings Count"
-              name="ratingsCount"
-              autoCapitalize="off"
-            />
+
             <p className="w-100 ms-2 mb-0 d-flex fw-bold">Shipping</p>
             <input
               className="w-100 mx-2 mb-2 d-flex"
@@ -143,6 +126,7 @@ const AddInventoryItem = () => {
               placeholder="Product Shipping"
               name="shipping"
               autoCapitalize="off"
+              required
             />
             <p className="w-100 ms-2 mb-0 d-flex fw-bold">Quantity</p>
             <input
@@ -151,6 +135,7 @@ const AddInventoryItem = () => {
               placeholder="Product Quantity"
               name="quantity"
               autoCapitalize="off"
+              required
             />
             <div className="w-100 mx-auto h-25 d-flex justify-content-center">
               <button className="develope-button">Add New Inventory</button>

@@ -68,46 +68,21 @@ const Header = () => {
                 <NavDropdown.Item as={Link} to="/myItems">
                   My Items
                 </NavDropdown.Item>
-                <NavDropdown.Divider />
-                {/* this is only log out button */}
-                {user ? (
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? 'active-link' : 'link'
-                    }
-                    to="/"
-                    onClick={() => signOut(auth)}
-                  >
-                    Log Out
-                  </NavLink>
-                ) : (
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? 'active-link' : 'link'
-                    }
-                    to="/login"
-                  >
-                    Login
-                  </NavLink>
-                )}
               </NavDropdown>
               {/* dropdown menu end */}
               {/* navbar menu end first section */}
             </Nav>
             <Nav>
-              {user && (
-                <NavDropdown
-                  title="Inventory Items"
-                  id="collasible-nav-dropdown"
-                >
-                  <NavDropdown.Item as={Link} to="/manageInventory">
-                    Manage Inventory
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/addInventoryItem">
-                    Add Inventory Item
-                  </NavDropdown.Item>
-                </NavDropdown>
-              )}
+              {/* {user && ( */}
+              <NavDropdown title="Inventory Items" id="collasible-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/manageInventory">
+                  Manage Inventory
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/addInventoryItem">
+                  Add Inventory Item
+                </NavDropdown.Item>
+              </NavDropdown>
+              {/* )} */}
 
               {user ? (
                 <NavLink

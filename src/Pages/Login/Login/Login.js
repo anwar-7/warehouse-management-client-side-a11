@@ -1,3 +1,4 @@
+import { sendPasswordResetEmail } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -57,6 +58,16 @@ const Login = () => {
     signInWithEmail(userInfo.email, userInfo.password);
   };
 
+  // password resat
+  const resetPassword = () => {
+    if (userInfo.email) {
+      sendPasswordResetEmail(userInfo.email);
+      toast.success('Sent email');
+    } else {
+      toast.warning('Enter your email address Please');
+    }
+  };
+
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
@@ -78,7 +89,7 @@ const Login = () => {
           toast.error('Wrong Input. Password Intruder!!');
           break;
         default:
-          toast.error('something will be wrong! You are not Register!!!');
+          toast.error('Something will be wrong! You are not Register!!!');
       }
     }
   }, [hookError]);
@@ -93,6 +104,7 @@ const Login = () => {
             <Form.Control
               onChange={handleEmailChange}
               type="email"
+              name="email"
               placeholder="Enter Email"
               autoComplete="off"
               required
@@ -125,6 +137,15 @@ const Login = () => {
             Don't have an account? <Link to="/register">Please Register</Link>{' '}
           </p>
         </Form>
+        <p className="text-center">
+          Forget Password?{' '}
+          <button
+            className="btn btn-link text-primary pe-auto text-decoration-none"
+            onClick={resetPassword}
+          >
+            Reset Password
+          </button>{' '}
+        </p>
         <div className=" d-flex justify-content-center align-content-center mt-5">
           <SocialLogin></SocialLogin>
         </div>

@@ -92,6 +92,7 @@ const Inventory = () => {
               readOnly
               autoCapitalize="off"
             />
+            <p className="w-100 ms-2 mb-0 d-flex fw-bold">Product Image</p>
             <img
               // height={40}
               // width={40}

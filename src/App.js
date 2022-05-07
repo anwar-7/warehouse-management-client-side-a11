@@ -57,7 +57,14 @@ function App() {
         />
         {/* dropdown menu */}
         <Route path="/manageItems" element={<ManageItems />} />
-        <Route path="/addItem" element={<AddItem />} />
+        <Route
+          path="/addItem"
+          element={
+            // <RequireAuth>
+            <AddItem />
+            // </RequireAuth>
+          }
+        />
         <Route path="/myItems" element={<MyItems />} />
         {/* after dropdown menu */}
         <Route path="/login" element={<Login />} />
