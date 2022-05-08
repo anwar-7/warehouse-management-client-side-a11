@@ -93,6 +93,16 @@ const Login = () => {
       }
     }
   }, [hookError]);
+
+  useEffect(() => {
+    if (loading) {
+      return (
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      );
+    }
+  }, [user, loading]);
   return (
     <div className="login-container container mb-5 w-50 mx-auto bg-light">
       <PageTitle title={'Login'}></PageTitle>
