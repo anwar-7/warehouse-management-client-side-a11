@@ -1,8 +1,17 @@
 <!-- Project Start -->
 
-# Project Name:
+# Project Name: [Gtech](https://inventory-management-a11-1b6ab.web.app/)
+
+Live site Url [https://inventory-management-a11-1b6ab.web.app/](https://inventory-management-a11-1b6ab.web.app/)
 
 ## Dependency Use
+
+- React Router
+- React Firebase Hooks
+- React Bootstrap
+- React Icons
+- React Toastify
+- React Helmet Async
 
 ## React Router
 
