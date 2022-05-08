@@ -94,7 +94,7 @@ const Login = () => {
     }
   }, [hookError]);
   return (
-    <div className="login-container container w-50 mx-auto bg-light">
+    <div className="login-container container mb-5 w-50 mx-auto bg-light">
       <PageTitle title={'Login'}></PageTitle>
       <div>
         <h3 className="text-center">PLEASE LOGIN</h3>

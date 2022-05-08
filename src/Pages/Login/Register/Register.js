@@ -96,7 +96,7 @@ const Register = () => {
   }, [hookError]);
 
   return (
-    <div className="register-container container w-50 mx-auto bg-light">
+    <div className="register-container mb-5 container w-50 mx-auto bg-light">
       <PageTitle title={'Register'}></PageTitle>
       <div>
         <h3 className="text-center">PLEASE REGISTER</h3>
