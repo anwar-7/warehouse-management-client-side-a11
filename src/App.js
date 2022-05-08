@@ -35,25 +35,25 @@ function App() {
         <Route
           path="/inventory/:productId"
           element={
-            // <RequireAuth>
-            <Inventory />
-            //</RequireAuth>
+            <RequireAuth>
+              <Inventory />
+            </RequireAuth>
           }
         />
         <Route
           path="/manageInventory"
           element={
-            // <RequireAuth>
-            <ManageInventory />
-            // </RequireAuth>
+            <RequireAuth>
+              <ManageInventory />
+            </RequireAuth>
           }
         />
         <Route
           path="/addInventoryItem"
           element={
-            // <RequireAuth>
-            <AddInventoryItem />
-            // </RequireAuth>
+            <RequireAuth>
+              <AddInventoryItem />
+            </RequireAuth>
           }
         />
         {/* dropdown menu */}
@@ -61,9 +61,9 @@ function App() {
         <Route
           path="/addItem"
           element={
-            // <RequireAuth>
-            <AddItem />
-            // </RequireAuth>
+            <RequireAuth>
+              <AddItem />
+            </RequireAuth>
           }
         />
         <Route path="/myItems" element={<MyItems />} />
