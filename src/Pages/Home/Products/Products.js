@@ -11,15 +11,6 @@ const Products = () => {
   const [user, loading, error] = useAuthState(auth);
   const [products, setProducts] = useProducts();
 
-  useEffect(() => {
-    if (loading) {
-      return (
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-      );
-    }
-  }, [user, loading, products]);
   return (
     <div>
       <div className="products-container">

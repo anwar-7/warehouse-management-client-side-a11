@@ -103,6 +103,7 @@ const Login = () => {
       );
     }
   }, [user, loading]);
+
   return (
     <div className="login-container container mb-5 w-50 mx-auto bg-light">
       <PageTitle title={'Login'}></PageTitle>
