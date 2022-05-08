@@ -6,13 +6,11 @@ const AddInventoryItem = () => {
   //Form Submit function post start
   const handelAddProduct = (e) => {
     e.preventDefault();
-
     const name = e.target.name.value;
     const supplier = e.target.supplier.value;
     const description = e.target.description.value;
     const price = e.target.price.value;
     const stock = e.target.stock.value;
-
     const img = e.target.img.value;
     const shipping = e.target.shipping.value;
     const quantity = e.target.quantity.value;
@@ -22,14 +20,13 @@ const AddInventoryItem = () => {
       description,
       price,
       stock,
-
       img,
       shipping,
       quantity,
     };
 
     //post Request send data nto server
-    fetch('http://localhost:5000/products', {
+    fetch('https://protected-bastion-86504.herokuapp.com/products', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +35,7 @@ const AddInventoryItem = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log('Success:', data);
+        // console.log('Success:', data);
         alert(`Product Name: ${product.name} inserted successfully`);
         e.target.reset();
       })
@@ -50,11 +47,11 @@ const AddInventoryItem = () => {
   return (
     <div className=" container">
       <PageTitle title={'Add Inventory Item'}></PageTitle>
-      <h1 className=" text-center fw-bold text-secondary mt-5 ">
+      <h1 className=" text-center fw-bold text-secondary mt-3 ">
         Add Inventory Item
       </h1>
       <>
-        <div className="my-5 p-5 bg-secondary bg-opacity-10 container">
+        <div className="my-3 p-5 bg-secondary bg-opacity-10 container">
           <h2 className="w-100 mx-auto text-center fw-bold">
             Add Product Details
           </h2>

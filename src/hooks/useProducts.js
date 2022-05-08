@@ -5,7 +5,9 @@ const useProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get(`http://localhost:5000/products`);
+      const { data } = await axios.get(
+        `https://protected-bastion-86504.herokuapp.com/products`
+      );
       // console.log(data);
       // all products
       setProducts(data);

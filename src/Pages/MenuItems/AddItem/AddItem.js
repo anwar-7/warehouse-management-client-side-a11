@@ -27,19 +27,21 @@ const AddItem = () => {
       description: event.target.description.value,
     };
     console.log(info);
-    axios.post('http://localhost:5000/products', info).then((response) => {
-      const { data } = response;
-      if (data.insertedId) {
-        //toast();
-        event.target.reset();
-      }
-    });
+    axios
+      .post('https://protected-bastion-86504.herokuapp.com/products', info)
+      .then((response) => {
+        const { data } = response;
+        if (data.insertedId) {
+          //toast();
+          event.target.reset();
+        }
+      });
   };
 
   return (
-    <div className="">
-      <div className="w-50 mx-auto mt-5">
-        {/* <h2>Add Item: {item.length}</h2> */}
+    <div className=" mb-5">
+      <div className="w-75 mx-auto mt-2 bg-light ps-5 pe-5 pb-5 rounded-2">
+        <h2 className="text-center fw-bold pt-3">Add Your Item</h2>
         <form onSubmit={handlePlaceOrder}>
           <input
             className="w-100 mb-2"
@@ -69,7 +71,7 @@ const AddItem = () => {
             className="w-100 mb-2"
             type="text"
             name="name"
-            placeholder="item name"
+            placeholder="Product Name"
             autoComplete="off"
             required
           />
@@ -88,34 +90,31 @@ const AddItem = () => {
             className="w-100 mb-2"
             type="text"
             name="price"
-            placeholder="price"
+            placeholder="Price"
             required
           />
-
           <br />
           <input
             className="w-100 mb-2"
             type="text"
             name="stock"
-            placeholder="stock"
+            placeholder="Stock"
             required
           />
-
           <br />
           <input
             className="w-100 mb-2"
             type="text"
             name="shipping"
-            placeholder="shipping"
+            placeholder="Shipping"
             required
           />
-
           <br />
           <input
             className="w-100 mb-2"
             type="text"
             name="quantity"
-            placeholder="quantity"
+            placeholder="Quantity"
             required
           />
           <br />
@@ -128,126 +127,25 @@ const AddItem = () => {
             cols="50"
             required
           />
-
           <br />
           <input
             className="w-100 mb-2"
             type="text"
             name="img"
-            placeholder="img"
+            placeholder="Image URL"
             required
           />
           <br />
-          <input className="btn btn-primary" type="submit" value="Add Item" />
+          <div className="d-flex justify-content-center align-items-center">
+            <input
+              className="btn btn-primary bg-primary bg-opacity-100 bg-gradient border-0"
+              type="submit"
+              value="Add Item"
+            />
+          </div>
         </form>
       </div>
     </div>
-
-    // <div className=" container">
-    //   <PageTitle title={'Add Item'}></PageTitle>
-    //   <h1 className=" text-center fw-bold text-secondary mt-5 ">
-    //     Order Your Product
-    //   </h1>
-    //   <>
-    //     <div className="my-5 p-5 bg-secondary bg-opacity-10 container">
-    //       <h2 className="w-100 mx-auto text-center fw-bold">
-    //         Add Product Details
-    //       </h2>
-    //       <form onSubmit={handelAddUserProduct}>
-    //         <p className="w-100 ms-2 mb-0 d-flex fw-bold">User Name</p>
-    //         <input
-    //           className="w-100 mx-2 mb-2 d-flex"
-    //           type="text"
-    //           placeholder="User Name"
-    //           name="user"
-    //           value={user?.displayName}
-    //           autoCapitalize="off"
-    //           readOnly
-    //         />
-    //         <p className="w-100 ms-2 mb-0 d-flex fw-bold">User Email</p>
-    //         <input
-    //           className="w-100 mx-2 mb-2 d-flex"
-    //           type="email"
-    //           value={user?.email}
-    //           name="email"
-    //           autoCapitalize="off"
-    //           readOnly
-    //         />
-    //         <p className="w-100 ms-2 mb-0 d-flex fw-bold">Product Name</p>
-    //         <input
-    //           className="w-100 mx-2 mb-2 d-flex"
-    //           type="text"
-    //           placeholder="Product Name"
-    //           value={product.name}
-    //           name="name"
-    //           autoCapitalize="off"
-    //           readOnly
-    //         />
-    //         <p className="w-100 ms-2 mb-0 d-flex fw-bold">Product Image</p>
-    //         <img
-    //           // height={80}
-    //           // width={40}
-    //           className="w-25 mx-auto d-flex"
-    //           src={product.img}
-    //           alt="product"
-    //         />
-    //         <p className="w-100 ms-2 mb-0 d-flex fw-bold">Category</p>
-    //         <input
-    //           className="w-100 mx-2 mb-2 d-flex"
-    //           type="text"
-    //           placeholder="Product Category"
-    //           value={product.category}
-    //           name="category"
-    //           autoCapitalize="off"
-    //           readOnly
-    //         />
-    //         <p className="w-100 ms-2 mb-0 d-flex fw-bold">Supplier</p>
-    //         <input
-    //           className="w-100 mx-2 mb-2 d-flex"
-    //           type="text"
-    //           placeholder="Product Supplier"
-    //           value={product.supplier}
-    //           name="supplier"
-    //           autoCapitalize="off"
-    //           readOnly
-    //         />
-
-    //         <p className="w-100 ms-2 mb-0 d-flex fw-bold">Price in USD $</p>
-    //         <input
-    //           className="w-100 mx-2 mb-2 d-flex"
-    //           type="text"
-    //           placeholder="Product Price"
-    //           value={product.price}
-    //           name="price"
-    //           autoCapitalize="off"
-    //           readOnly
-    //         />
-
-    //         <p className="w-100 ms-2 mb-0 d-flex fw-bold">User Phone Number</p>
-    //         <input
-    //           className="w-100 mx-2 mb-2 d-flex"
-    //           type="tel"
-    //           placeholder="Phone"
-    //           name="phone"
-    //           autoCapitalize="off"
-    //           required
-    //         />
-    //         <p className="w-100 ms-2 mb-0 d-flex fw-bold">User Address</p>
-    //         <input
-    //           className="w-100 mx-2 mb-2 d-flex"
-    //           type="text"
-    //           placeholder="Address"
-    //           name="address"
-    //           autoCapitalize="off"
-    //           required
-    //         />
-    //         <div className="w-100 mx-auto h-25 d-flex justify-content-center">
-    //           <button className="develope-button mt-2">Order</button>
-    //         </div>
-    //       </form>
-    //     </div>
-    //   </>
-    // </div>
   );
 };
 

@@ -2,7 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
 import Banner from '../Banner/Banner';
+import Info from '../Info/Info';
 import Products from '../Products/Products';
+import Review from '../Review/Review';
 import './Home.css';
 
 const Home = () => {
@@ -10,10 +12,16 @@ const Home = () => {
   return (
     <div className="home-container container">
       <PageTitle title={'Home'}></PageTitle>
-      <h1>This is Home</h1>
+
+      {/* this is banner */}
       <Banner></Banner>
+      {/* product section */}
+      <h3 style={{ color: '#112B3C' }} className="text-center fw-bold mt-5">
+        Products section
+      </h3>
       <Products></Products>
-      <div className="p-5 d-flex justify-content-center">
+      {/* manage inventory button */}
+      <div className="p-3 d-flex justify-content-center">
         <button
           onClick={() => navigate('/manageInventory')}
           className="manage-inventory-button"
@@ -21,6 +29,13 @@ const Home = () => {
           Manage Inventory
         </button>
       </div>
+      {/* review section */}
+      <Review></Review>
+      {/* information section */}
+      <h3 style={{ color: '#112B3C' }} className="text-center fw-bold mt-4">
+        Information
+      </h3>
+      <Info></Info>
     </div>
   );
 };

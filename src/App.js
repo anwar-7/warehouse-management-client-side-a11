@@ -17,6 +17,7 @@ import Inventory from './Pages/Inventory/Inventory/Inventory';
 import ManageInventory from './Pages/Inventory/ManageInventory/ManageInventory';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import AddInventoryItem from './Pages/Inventory/AddInventoryItem/AddInventoryItem';
+import Footer from './Pages/Shared/Footer/Footer';
 
 // minified version is also included
 // import 'react-toastify/dist/ReactToastify.min.css';
@@ -34,9 +35,9 @@ function App() {
         <Route
           path="/inventory/:productId"
           element={
-            <RequireAuth>
-              <Inventory />
-            </RequireAuth>
+            // <RequireAuth>
+            <Inventory />
+            //</RequireAuth>
           }
         />
         <Route
@@ -71,6 +72,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer></Footer>
       {/* toast container */}
       <ToastContainer
         position="top-right"

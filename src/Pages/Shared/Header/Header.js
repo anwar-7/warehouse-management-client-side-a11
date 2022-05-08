@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import './Header.css';
+import gtlogo from '../../../Assets/images/gtlogo.png';
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -22,10 +23,11 @@ const Header = () => {
             <img
               height={30}
               width={30}
-              //   src={logo}
+              src={gtlogo}
               alt=""
               className="d-inline-block align-top"
             />{' '}
+            {/* <h6>Gtech</h6> */}
             Gtech
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -48,41 +50,36 @@ const Header = () => {
               >
                 Blogs
               </NavLink>
-              {/* <NavLink
-                className={({ isActive }) =>
-                  isActive ? 'active-link' : 'link'
-                }
-                to="/inventory"
-              >
-                Inventory
-              </NavLink> */}
-              {/* navbar menu end first section */}
-              {/* dropdown menu start */}
-              <NavDropdown title="Menu Items" id="collasible-nav-dropdown">
-                <NavDropdown.Item as={Link} to="/manageItems">
-                  Manage Items
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/addItem">
-                  Add Item
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/myItems">
-                  My Items
-                </NavDropdown.Item>
-              </NavDropdown>
+              {user && (
+                <NavDropdown title="Menu Items" id="collasible-nav-dropdown">
+                  <NavDropdown.Item as={Link} to="/manageItems">
+                    Manage Items
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/addItem">
+                    Add Item
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/myItems">
+                    My Items
+                  </NavDropdown.Item>
+                </NavDropdown>
+              )}
               {/* dropdown menu end */}
               {/* navbar menu end first section */}
             </Nav>
             <Nav>
-              {/* {user && ( */}
-              <NavDropdown title="Inventory Items" id="collasible-nav-dropdown">
-                <NavDropdown.Item as={Link} to="/manageInventory">
-                  Manage Inventory
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/addInventoryItem">
-                  Add Inventory Item
-                </NavDropdown.Item>
-              </NavDropdown>
-              {/* )} */}
+              {user && (
+                <NavDropdown
+                  title="Inventory Items"
+                  id="collasible-nav-dropdown"
+                >
+                  <NavDropdown.Item as={Link} to="/manageInventory">
+                    Manage Inventory
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/addInventoryItem">
+                    Add Inventory Item
+                  </NavDropdown.Item>
+                </NavDropdown>
+              )}
 
               {user ? (
                 <NavLink

@@ -1,0 +1,62 @@
+.home-container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 3%;
+}
+
+.project-card-body {
+  border-top: 5px solid black;
+  max-width: 300px;
+  /* height: 450px; */
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.service-detail {
+  margin-bottom: 10px;
+}
+.service-detail p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.banner-text > div > h1 {
+  font-weight: 700;
+  color: purple;
+}
+
+.banner-text > div > p {
+  font-weight: 500;
+}
+
+.banner-image {
+  width: 100%;
+  max-height: 500px;
+}
+
+@media only screen and (max-width: 576px) {
+  .card-container {
+    /* display: grid; */
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 3%;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+  .card-container {
+    /* display: grid; */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 3%;
+  }
+}

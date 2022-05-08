@@ -1,11 +1,9 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import useProductDetails from '../../../hooks/useProductDetails';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
 import './Inventory.css';
-import { toast } from 'react-toastify';
-// import Increment from './Increment';
 
 const Inventory = () => {
   const { productId } = useParams();
@@ -23,10 +21,10 @@ const Inventory = () => {
       const newQuantity = { quantity };
       (async () => {
         const { data } = await axios.put(
-          `http://localhost:5000/products/${productId}`,
+          `https://protected-bastion-86504.herokuapp.com/products/${productId}`,
           newQuantity
         );
-        console.log('success', data);
+        // console.log('success', data);
         // alert('users added successfully!!!');
         // event.target.reset();
       })();
@@ -34,12 +32,13 @@ const Inventory = () => {
       alert('Your Stock Is sold out');
       return;
     }
-    alert('product is Delivered Successfully!!!');
+    alert('Product is Delivered Successfully!!!');
     event.target.reset();
   };
 
   const handleIncreases = (event) => {
     const incQuantity = parseInt(event.target.value);
+    console.log(incQuantity);
     if (incQuantity < 0) {
       alert('Negative input is not allowed');
     } else {
@@ -52,17 +51,18 @@ const Inventory = () => {
     // event.preventDefault();
     const oldQuantity = parseInt(product.quantity);
     const quantity = oldQuantity + incQuantity;
+    console.log('pI2', quantity);
     if (quantity) {
       // const quantity = parseInt(event.target.quantity.value);
       const newQuantity = { quantity };
       (async () => {
         const { data } = await axios.put(
-          `http://localhost:5000/products/${productId}`,
+          `https://protected-bastion-86504.herokuapp.com/products/${productId}`,
           newQuantity
         );
-        console.log('success', data);
+        // console.log('success', data);
         // alert('users added successfully!!!');
-        // event.target.reset();
+        event.target.reset();
       })();
     }
   };
@@ -70,9 +70,9 @@ const Inventory = () => {
   return (
     <div className="inventory-container container mb-5">
       <PageTitle title={'Inventory'}></PageTitle>
-      <div className="row row-cols-1 row-cols-md-2 g-4 mx-1 mt-5 flex-sm-wrap">
+      <div className="row row-cols-1 row-cols-md-2 g-4 mx-1 mt-3 flex-sm-wrap">
         <div className="col ps-0 bg-secondary bg-opacity-10">
-          <h3 className="w-100 mx-auto text-center">Product Details</h3>
+          <h3 className="w-100 mx-auto mt-2 text-center">Product Details</h3>
           <form onSubmit={handleSubmit}>
             <p className="w-100 ms-2 mb-0 d-flex fw-bold">Product Name</p>
             <input

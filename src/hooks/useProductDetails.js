@@ -6,7 +6,7 @@ const useProductDetails = (productId) => {
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(
-        `http://localhost:5000/products/${productId}`
+        `https://protected-bastion-86504.herokuapp.com/products/${productId}`
       );
       // console.log(data);
       setProduct(data);

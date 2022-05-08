@@ -15,7 +15,7 @@ const ManageInventory = () => {
     const proceed = window.confirm('Are you sure you want to delete?');
     if (proceed) {
       console.log('Deleting Product', id);
-      const url = `http://localhost:5000/products/${id}`;
+      const url = `https://protected-bastion-86504.herokuapp.com/products/${id}`;
       fetch(url, {
         method: 'DELETE',
       }).then((res) =>
