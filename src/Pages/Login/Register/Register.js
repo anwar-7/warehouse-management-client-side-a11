@@ -95,15 +95,13 @@ const Register = () => {
     }
   }, [hookError]);
 
-  useEffect(() => {
-    if (loading) {
-      return (
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-      );
-    }
-  }, [user, loading]);
+  if (loading) {
+    return (
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    );
+  }
 
   return (
     <div className="register-container mb-5 container w-50 mx-auto bg-light">

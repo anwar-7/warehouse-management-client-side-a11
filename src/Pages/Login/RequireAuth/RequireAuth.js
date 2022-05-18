@@ -10,7 +10,11 @@ const RequireAuth = ({ children }) => {
   const location = useLocation();
   const [user, loading] = useAuthState(auth);
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    );
   }
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />;

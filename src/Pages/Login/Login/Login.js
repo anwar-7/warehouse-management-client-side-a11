@@ -60,6 +60,7 @@ const Login = () => {
 
   // password resat
   const resetPassword = () => {
+    // const email = userInfo.email
     if (userInfo.email) {
       sendPasswordResetEmail(userInfo.email);
       toast.success('Sent email');
@@ -94,15 +95,13 @@ const Login = () => {
     }
   }, [hookError]);
 
-  useEffect(() => {
-    if (loading) {
-      return (
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-      );
-    }
-  }, [user, loading]);
+  if (loading) {
+    return (
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    );
+  }
 
   return (
     <div className="login-container container mb-5 w-50 mx-auto bg-light">
